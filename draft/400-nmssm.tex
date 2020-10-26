@@ -135,7 +135,7 @@ T.~Biek\"otter$^{1}$%
 \footnote{email:alexander.grohsjean@desy.de}%
 , S.~Heinemeyer$^{2,3,4}$%
 \footnote{email: Sven.Heinemeyer@cern.ch}%
-, V.~Lozano$^1$%
+, V.M.~Lozano$^1$%
 \footnote{email: victor.lozano@desy.de}%
 ,\\[.5em] C.~Schwanenberger$^1$%
 \footnote{email: christian.schwanenberger@desy.de}%
@@ -253,7 +253,82 @@ spaces are preferred to accomodate the excesses.
 \subsection{The N2HDM}
 \label{sec:n2hdm}
 
+The simplest extension of the two Higgs doublet model (2HDM) that conserves $CP$ is achieved by adding a real scalar singlet Higgs field which gives rise to the so-called N2HDM. The scalar potential when the scalar singlet is added can be written as \cite{Chen:2013jvg,Muhlleitner:2016mzt}
+\begin{align}
+V&=m_{11}^2|\Phi_1|^2 + m_{22}^2|\Phi_2|^2 -m_{12}^2(\Phi_1^\dagger\Phi_2+ \text{h.c.}) +\frac{\lambda_1}{2}(\Phi_1^\dagger\Phi_1)^2+\frac{\lambda_2}{2}(\Phi_2^\dagger\Phi_2)^2 \notag \\
+&+\lambda_3 (\Phi_1^\dagger\Phi_1)(\Phi_2^\dagger\Phi_2)+ \lambda_4(\Phi_1^\dagger\Phi_2)(\Phi_2^\dagger \Phi_1)+\frac{\lambda_5}{2}[(\Phi_1^\dagger\Phi_2)^2+\text{h.c.}]\notag\\
+&+\frac{1}{2}m_S^2\Phi_S^2+\frac{\lambda_6}{8}\Phi_S^4+\frac{\lambda_7}{2}(\Phi_1^\dagger\Phi_1)\Phi_S^2+\frac{\lambda_8}{2}(\Phi_2^\dagger\Phi_2)\Phi_S^2,
+\label{eq:n2hdmpotential}
+\end{align}
+the two $SU(2)_L$ doublets are $\Phi_1$ and $\Phi_2$ while $\Phi_S$ the real scalar singlet. One of the most problematic point when dealing with two Higgs doublet models is the appearance of flavour changing neutral currents (FCNC) at tree level. In order to avoid such phenomenon a $Z_2$ symmetry is imposed on the scalar potential in such a way that the scalar fields transform as
+\begin{align}
+\Phi_1\to\Phi_1,\,\, \Phi_2\to-\Phi_2,\,\, \Phi_S\to \Phi_S.
+\end{align}
+However, we can see from Eq.~\eqref{eq:n2hdmpotential} that this $Z_2$ symmetry is softly broken by the $m_{12}^2$ term. Despite this fact the extension of this symmetry to the Yukawa sector forbids strictly FCNSs at tree level.
+In the Yukawa sector there are four variants of the N2HDM that depends on the configuration of the fermions with respect to the $Z_2$ symmetry. These four types are listed in Tab.~\ref{tab:yukawa}.
 
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{l c c c}
+    \hline
+    &$u$-type& $d$-type& leptons\\
+    \hline
+    type I &$\Phi_2$&$\Phi_2$&$\Phi_2$\\
+    type II &$\Phi_2$&$\Phi_1$&$\Phi_1$\\
+    type III (lepton specific) &$\Phi_2$&$\Phi_2$&$\Phi_1$\\
+    type IV (flipped) &$\Phi_2$&$\Phi_1$&$\Phi_2$\\
+    \hline
+    \end{tabular}
+  \end{center}
+\caption{Allowed fermion couplings in the four types of N2HDM.}
+\label{tab:yukawa}
+\end{table}
+
+After electroweak symmetry breaking (EWSB) takes place, the scalar fields can be parameterised as
+\begin{align}
+\Phi_1=\left(
+\begin{array}{c}
+\phi_1^+\\
+\frac{1}{\sqrt{2}}(v_1+\rho_1+i\eta_1)
+\end{array}
+\right),\,\,
+\Phi_2=\left(
+\begin{array}{c}
+\phi_2^+\\
+\frac{1}{\sqrt{2}}(v_2+\rho_2+i\eta_2)
+\end{array}
+\right),\,\,
+\Phi_S=v_S+\rho_S,
+\label{eq:EWSBfields}
+\end{align}
+where $v_1$, $v_2$ and $v_S$ are the real vacuum expectation values (vev) acquired by the fields $\Phi_1$, $\Phi_2$ and $\Phi_S$ respectively. We can define $\tan \beta=v_2/v1$ as it is usually done in the 2HDM. The configuration of the scalar fields after EWSB occurs, \textit{i.e.} Eq.~\eqref{eq:EWSBfields}, makes the charged and $CP$-odd Higgs sector remain unaltered with respecto to the 2HDM counterpart. However, that is not the case in the $CP$-even scalar sector due to the mixing of the three fields, $\rho_1$, $\rho_2$ and $\rho_S$. Such mixing configures the physical eigenstates under a $3\times 3$ orthogonal matrix, $R$, of the interaction basis, 
+\begin{align}
+\left(
+\begin{array}{c}
+h_1\\
+h_2\\
+h_3
+\end{array}
+\right)=R\left(
+\begin{array}{c}
+\rho_1\\
+\rho_2\\
+\rho_S
+\end{array}
+\right).
+\end{align}
+The subindex $i$, where $i=1,2,3$ respect the following order $m_{h_1}<m_{h_2}<m_{h_3}$ that we use in the rest of the paper. The form of the rotation matrix $R$ can be written as
+\begin{align}
+R=\left(
+\begin{array}{ccc}
+c_{\alpha_1}c_{\alpha_2}&s_{\alpha_1}c_{\alpha_2}&s_{\alpha_2}\\
+-(c_{\alpha_1}s_{\alpha_2}s_{\alpha_3}+s_{\alpha_1}c_{\alpha_3})&c_{\alpha_1}c_{\alpha_3}-s_{\alpha_1}s_{\alpha_2}s_{\alpha_3}&c_{\alpha_2}s_{\alpha_3}\\
+-c_{\alpha_1}s_{\alpha_2}c_{\alpha_3}+s_{\alpha_1}s_{\alpha_3}&-(c_{\alpha_1}s_{\alpha_3}+s_{\alpha_1}s_{\alpha_2}c_{\alpha_3})& c_{\alpha_2}c_{\alpha_3}
+\end{array}
+\right),
+\label{eq:rotationm}
+\end{align}
+where $s_\alpha=\sin\alpha$, $c_\alpha=\cos\alpha$ and $\alpha_1$, $\alpha_2$,$\alpha_3$ are the three mixing angles.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{The NMSSM}
@@ -292,6 +367,58 @@ Not taken into account: DM constraints. Explain why.
 \subsection{Prediction of \boldmath{$\chi^2_{400}$} in the N2HDM and NMSSM}
 
 
+\begin{figure}[ht!]
+	\begin{center}
+		\begin{tabular}{cc}
+			\centering
+			\hspace*{-3mm}
+			\includegraphics[scale=0.40]{figs/2_hs.pdf} &
+			\includegraphics[scale=0.40]{figs/2_ll.pdf}
+		\end{tabular}
+		\caption{.}
+		\label{fig:typeiimu}
+	\end{center}
+\end{figure}
+
+\begin{figure}[ht!]
+	\begin{center}
+		\begin{tabular}{cc}
+			\centering
+			\hspace*{-3mm}
+			\includegraphics[scale=0.40]{figs/2_LLxs96.pdf} &
+			\includegraphics[scale=0.40]{figs/2_LLxstb.pdf}
+		\end{tabular}
+		\caption{.}
+		\label{fig:typeiisigma}
+	\end{center}
+\end{figure}
+
+
+\begin{figure}[ht!]
+	\begin{center}
+		\begin{tabular}{cc}
+			\centering
+			\hspace*{-3mm}
+			\includegraphics[scale=0.40]{figs/4_hs.pdf} &
+			\includegraphics[scale=0.40]{figs/4_ll.pdf}
+		\end{tabular}
+		\caption{.}
+		\label{fig:typeiimu}
+	\end{center}
+\end{figure}
+
+\begin{figure}[ht!]
+	\begin{center}
+		\begin{tabular}{cc}
+			\centering
+			\hspace*{-3mm}
+			\includegraphics[scale=0.40]{figs/4_LLxs96.pdf} &
+			\includegraphics[scale=0.40]{figs/4_LLxstb.pdf}
+		\end{tabular}
+		\caption{.}
+		\label{fig:typeiisigma}
+	\end{center}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -513,6 +640,19 @@ X.~Cid Vidal \textit{et al.},
 CERN Yellow Rep. Monogr. \textbf{7} (2019), 585-865
 [arXiv:1812.07831 [hep-ph]].
 
+\bibitem{Chen:2013jvg}
+C.~Y.~Chen, M.~Freid and M.~Sher,
+``Next-to-minimal two Higgs doublet model,''
+Phys. Rev. D \textbf{89} (2014) no.7, 075009
+doi:10.1103/PhysRevD.89.075009
+[arXiv:1312.3949 [hep-ph]].
+
+\bibitem{Muhlleitner:2016mzt}
+M.~Muhlleitner, M.~O.~P.~Sampaio, R.~Santos and J.~Wittbrodt,
+``The N2HDM under Theoretical and Experimental Scrutiny,''
+JHEP \textbf{03} (2017), 094
+doi:10.1007/JHEP03(2017)094
+[arXiv:1612.01309 [hep-ph]].
 
 
 \end{thebibliography}
