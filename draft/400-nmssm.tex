@@ -1,0 +1,527 @@
+\pdfoutput=1
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{multirow}
+\usepackage{appendix}
+
+%\usepackage{color}
+\usepackage{xcolor}
+\usepackage{url}
+%\usepackage{cancel}
+\usepackage{ulem}
+\usepackage{float}
+%black, blue, brown, cyan, darkgray, gray, green, lightgray, lime,
+%magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
+%\usepackage{bm}
+\usepackage{float}
+%\usepackage{jheppub}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\usepackage{soul}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+ % Einstellungen, wenn man deutsch schreiben will, z.B. Trennregeln
+\usepackage[utf8]{inputenc}  % f??r Unix-Systeme
+  % erm??glicht die direkte Eingabe von Umlauten und ??
+  % evt. obige Zeile ersetzen durch
+  % \usepackage[utf8]{inputenc}
+  % \usepackage[ansinew]{inputenc}  % f??r Windows
+  % \usepackage[applemac]{inputenc} % f??r den Mac
+\usepackage{bbm}
+
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = black, %Colour of internal links
+  citecolor   = black %Colour of citations
+}
+
+
+\usepackage[numbers,sort&compress]{natbib}
+%\bibliographystyle{JHEP}
+\bibliographystyle{kp}
+
+
+%\usepackage{geometry}
+%\geometry{textheight=230mm,textwidth=165mm,footskip=20mm}
+
+
+
+\graphicspath{{plots/}}
+
+%\hypersetup{linktocpage}
+%\voffset -1cm
+%\hoffset 0.1cm
+% \textwidth 16.5cm
+% \textheight 21.5cm
+% %\topmargin -0.5cm
+% \renewcommand{\baselinestretch}{1.30}                                
+% \newcommand{\mnote}[1]{\marginpar{%                               
+%         \vskip-\baselineskip                                               
+%         \raggedright\footnotesize                                          
+%         \itshape\hrule\smallskip\tiny\bf{#1}\par\smallskip\hrule}}
+% \def\hlite#1{\textcolor{blue}{\textsf{#1}}}
+% \def\hlitebrown#1{\textcolor{brown}{\textsf{#1}}}
+% \def\hlitered#1{\textcolor{red}{\textsf{#1}}}
+ \def\is#1{\textcolor{blue}{#1}}
+
+%==============================================================================
+%\input{just_def.tex}
+\input{paperdef.tex}
+
+
+\oddsidemargin -0.5cm
+\evensidemargin \oddsidemargin
+\marginparwidth 68pt
+\marginparsep 10pt
+\topmargin 0cm
+\headheight 0pt
+\headsep 0pt
+\footskip 1cm
+\textheight 23cm
+\textwidth 16.5cm
+\columnsep 10pt
+\columnseprule 0pt
+
+\captionsetup{labelfont=bf, font=sf, size=small}
+\renewcommand{\arraystretch}{1.2}
+
+\allowdisplaybreaks
+\sloppy
+
+\hyphenation{Feyn-Arts process--indepen-dent}
+
+
+%==============================================================================
+
+\begin{document}
+\thispagestyle{empty}
+
+
+\def\thefootnote{\fnsymbol{footnote}}
+
+\begin{flushright}
+\mbox{}
+%IFT--UAM/CSIC--20-077\\
+%IPMU20-0057\\	
+%arXiv:2006.15157 [hep-ph]
+\end{flushright}
+
+\vspace{0.5cm}
+
+\begin{center}
+
+{\large\sc
+{\bf Possible New Higgs Bosons at \boldmath{$\sim 400 \gev$}
+}}
+
+\vspace{1cm}
+
+
+{\sc
+T.~Biek\"otter$^{1}$%
+\footnote{email: thomas.biekoetter@desy.de}%
+, A.~Grohsjean$^1$%
+\footnote{email:alexander.grohsjean@desy.de}%
+, S.~Heinemeyer$^{2,3,4}$%
+\footnote{email: Sven.Heinemeyer@cern.ch}%
+, V.~Lozano$^1$%
+\footnote{email: victor.lozano@desy.de}%
+,\\[.5em] C.~Schwanenberger$^1$%
+\footnote{email: christian.schwanenberger@desy.de}%
+~and G.~Weiglein$^{1}$%
+\footnote{email: georg.weiglein@desy.de}%
+}
+
+\vspace*{.7cm}
+
+{\sl
+$^1$DESY, Notkestrasse 85, 22607 Hamburg, Germany
+
+\vspace*{0.1cm}
+
+$^2$IFT (UAM/CSIC), Universidad Aut\'onoma de Madrid, 
+Cantoblanco, 28048, Spain
+
+\vspace{0.1cm}
+
+$^3$Campus of International Excellence UAM+CSIC, 
+Cantoblanco, 28049, Madrid, Spain 
+
+\vspace*{0.1cm}
+
+$^4$Instituto de F\'isica de Cantabria (CSIC-UC), 
+39005, Santander, Spain
+}
+
+\end{center}
+
+\vspace*{0.1cm}
+
+\begin{abstract}
+\noindent
+Several searches for Beyond the Standard Model (BSM) Higgs bosons at the
+LHC show an excess at the level of $2-3\,\sig$ at a mass scale of
+$\mphi \sim 400 \gev$. $\phi$ can either be a \cp-even Higgs boson,~$H$,
+or a \cp-odd Higgs boson,~$A$. The respective search channels are
+$pp \to H/A \to t \bar t$, $pp \to H/A \to \tau^+\tau^-$ and
+$pp \to A \to Z h$, observed at CMS, ATLAS and ATLAS/CMS, respectively.
+We derive/obtain best-fit cross sections and uncertainties for these excesses. 
+Within the Next-to-2 Higgs Doublet Model (N2HDM) and the Next-to Minimal
+Supersymmetric Standard Model (NMSSM) we analyze to what extent one, two
+or three of these excesses can be fit simultaneously in the two models.
+We find \ldots
+\end{abstract}
+
+%\pacs{}
+
+\def\thefootnote{\arabic{footnote}}
+\setcounter{page}{0}
+\setcounter{footnote}{0}
+
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}
+\label{sec:intro}
+
+
+\begin{itemize}
+
+\item
+Higgs is a big success, fits in the SM, but also in BSM models.
+
+\item
+Possible BSM models: 2HDM, N2HDM, \ldots, MSSM, NMSSM, \ldots
+
+\item
+LHC searches for BSM Higgs bosons. Excesses in various channels at the
+$2-3\,\sig$ level. List channels etc.
+
+\item
+Main idea of the paper: check whether the N2HDM and NMSSM can accomodate
+one, two or three of these excesses simultaneously.
+
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The Excesses}
+\label{sec:excesses}
+
+\noindent
+More details on the excesses, best-fit cross sections and uncertainties,
+$\chi^2$ function.
+
+\begin{align}
+\chi^2_{400} := \ldots
+\label{chi400}
+\end{align}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{The models}
+\label{sec:models}
+
+\noindent
+We list the models and the codes that are used to evaluate them.\\
+Maybe we can put some general considerations about which parameter
+spaces are preferred to accomodate the excesses.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{The N2HDM}
+\label{sec:n2hdm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{The NMSSM}
+\label{sec:nmssm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Experimental constraints}
+\label{sec:constraints}
+
+\begin{itemize}
+
+\item
+Theoretical constraints
+
+\item
+LHC rate measurements of $h_{125}$: \texttt{HiggsSignals}
+
+\item
+BSM Higgs searches: \texttt{HiggsBounds}
+
+\item
+Flavor constraints: \texttt{SuperIso}\\
+Do we really take this into account?
+
+
+\item
+Not taken into account: DM constraints. Explain why.
+
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prediction of \boldmath{$\chi^2_{400}$} in the N2HDM and NMSSM}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Results}
+\label{sec:results}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section {Conclusions}
+\label{sec:conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+
+\subsection*{Acknowledgments}
+
+We thank
+M.~Kado
+for helpful discussions.
+The work of S.H.\ is supported in part by the
+Spanish Agencia Estatal de Investigaci{\' o}n (AEI) and the EU Fondo Europeo de
+Desarrollo Regional (FEDER) through the project FPA2016-78645-P and in part by
+the “Spanish Red Consolider MultiDark” FPA2017-90566-REDC, in
+part by the MEINCOP Spain under contract FPA2016-78022-P and in part by
+the AEI through the grant IFT Centro de Excelencia Severo Ochoa SEV-2016-0597.
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendices}
+
+\section{Derivation of best-fit cross sections and uncertainties}
+\label{sec:best-fit-xs}
+
+\subsection{The very simple recipe}
+Assuming a gaussian signal, one can extract the expected signal
+from the value of the $95\%$ CL exclusion limit $L_{\rm exp}^{95}$
+and the corresponding $1\,\sigma$ uncertainty $s_{\rm exp}^{95}$.
+The one-sided $95\%$ CL for a normal distribution
+lies 1.64 standard deviations from the mean, so that the
+central value for the expected signal cross section $\sigma_{\rm exp}$
+is given by
+\begin{equation}
+\sigma_{\rm exp} = L_{\rm exp}^{95} - 1.64 s_{\rm exp}^{95} \, .
+\end{equation}
+The same is true for the central value of the observed signal
+cross section $\sigma_{\rm obs}$. Given the observed $95\%$ CL
+exclusion limit $L_{\rm obs}^{95}$ together with the
+$1\,\sigma$ uncertainty $s_{\rm obs}^{95}$, and again assuming a gaussian
+signal shape, we can write down the relation
+\begin{equation}
+\sigma_{\rm obs} = L_{\rm obs}^{95} - 1.64 s_{\rm obs}^{95} \, .
+\end{equation}
+Unfortunately, the uncertainty of the observed signal is not
+shown in the plots. However, under the conservative assumption that
+\begin{equation}
+s_{\rm obs}^{95} = s_{\rm exp}^{95} \, ,
+\end{equation}
+we can still derive a value for the signal cross section $\sigma_{\rm sig}$,
+i.e., the cross section from BSM physics that amounts for the
+excess between observed events and expected events based on the
+SM hypothesis. In our analysis, $\sigma_{\rm sig}$ is the cross section
+given by the NMSSM pseudoscalar and scalar resonances.
+Under the assumption that interference of NMSSM contributions and SM
+background is negligible, we know that
+\begin{equation}
+\sigma_{\rm obs} = \sigma_{\rm exp} + \sigma_{\rm sig} \, .
+\end{equation}
+Thus, we find that $\sigma_{\rm obs}$ is simply given by
+the difference between the observed and expected exclusion limits,
+\begin{equation}
+\sigma_{\rm sig} = L_{\rm obs}^{95} - L_{\rm exp}^{95} \, .
+\end{equation}
+Note that this definition has the intuitively desired properties.
+On the one hand it grows with the number of excess events, and
+on the other hand it is exactly zero in case the expected and
+the observed exclusion limits coincide, meaning that there is
+no excess to be explained by BSM physics.
+
+For the uncertainty of the signal cross section $s_{\rm sig}$
+we will assume that it is given by
+\begin{equation}
+s_{\rm sig} = \frac{s_{\rm exp}^{95}}{1.64} \, ,
+\end{equation}
+because [insert explanation here].
+
+Based on this simple recipe, we find for the $Zh$ excess the
+signal cross sections as shown in \refta{zhsimple}, given for the
+mass range in which the excess was observed.
+\begin{table}
+\centering
+\begin{tabular}{l|cc}
+$m$ [GeV] & $\sigma_{\rm sig}^{gg}$ [fb] & $\sigma_{\rm sig}^{b \bar b}$ [fb] \\
+\hline
+400 & $ 89 \pm 33$ & $103 \pm 37$ \\
+420 & $118 \pm 27$ & $171 \pm 27$ \\
+440 & $114 \pm 23$ & $183 \pm 27$ \\
+460 & $ 50 \pm 20$ & $109 \pm 21$ \\
+480 & $ 11 \pm 17$ & $ 50 \pm 19$
+\end{tabular}
+\caption{Signal cross sections for the $Zh$ excess assuming $gg$ production
+or $b \bar b$ production as derived following the very simple recipe.}
+\label{zhsimple}
+\end{table}
+
+
+
+\subsection{Advanced approach and its connection to the simple ansatz}
+
+The observed $95\%$ CL exclusion limit on a given cross
+section, \sigmaobsnfive, can be used to estimate its
+central value. Assuming that the
+signal uncertainty is dominated by statistical fluctuations,
+i.e. $\sqrt{N_{\rm evt}} = \sqrt{\alpha~\sigmaobsnfive}$, the total
+uncertainty reads   
+\begin{equation}
+\deltaobsnfive = \sqrt {\alpha~\sigmaobsnfive + \deltabkg^2} 
+\end{equation}
+where \deltabkg denotes the background uncertainty. 
+As the one-sided $95\%$ CL of a normal distribution
+lies 1.645 standard deviations from its mean the
+central value for the expected signal cross section \sigmaobs and its
+uncertainty are given by 
+\begin{eqnarray} 
+\sigmaobs &=& \sigmaobsnfive - 1.645~\deltaobsnfive \label{sigmamarumi} \\
+\deltaobs &=& \sqrt{\alpha~\sigmaobs + \deltabkg^2}  \, . \label{deltamarumi}
+\end{eqnarray}
+In order to estimate $\alpha$ and \deltabkg, we can construct 
+the following set of equations 
+\begin{eqnarray}
+\sigmanfive &=& 1.645~\deltanfive \\ 
+\deltanfive^2 &=& \alpha~\sigmanfive + \deltabkg^2 \\
+\sigmanfivepone &=& 1.645~\deltanfivepone + \deltabkg \\ 
+\deltanfivepone^2 &=& \alpha~\sigmanfivepone + \deltabkg^2 \\
+\sigmanfiveptwo &=& 1.645~\deltanfiveptwo + 2~\deltabkg \\ 
+\deltanfiveptwo^2 &=& \alpha~\sigmanfiveptwo + \deltabkg^2 \, . 
+\end{eqnarray}
+
+Equations~(\ref{sigmamarumi}) and (\ref{deltamarumi}) obtain a very simple form  
+if we are assuming that the signal uncertainty can be neglected  
+compared to that of the background. In this case, \sigmanfive =
+1.645~\deltabkg, and so 
+\begin{eqnarray}
+\sigmaobs &=& \sigmaobsnfive - \sigmanfive \label{sigmasimple} \\
+\deltaobs &=& \deltabkg = \sigmanfive / 1.645  \, . \label{deltasimple}
+\end{eqnarray}
+
+
+%\begin{table}
+%\centering
+%\begin{tabular}{c|c|c|c|c|c|c|c}
+%   & \sigmanfive & \sigmanfivepone & \sigmanfiveptwo & \sigmaobsnfive
+%   & \sigmaobs $\pm$ \deltaobs(full) & \sigmaobs
+%   $\pm$ \deltaobs (1.645) & \sigmaobs $\pm$ \deltaobs (diff) \\ 
+%\hline
+%$ ggH\tau\tau$ (ATLAS) & 40.0  & 53.8 & 67.9 & 82.9  & 27.0 $\pm$ 20.5
+%& 60.2 $\pm$ 24.3  &  42.9 $\pm$ 13.8 \\
+%$ bbH\tau\tau$ (ATLAS) & 30.6  & 41.9 & 54.9 & 77.2  &
+%30.6 $\pm$ 18.6  &  58.6 $\pm$ 18.6  &  46.6 $\pm$ 11.3 \\
+%$ gg ZH $ (ATLAS) & 139   & 185  & 231 & 228 &  53.5 $\pm$ 56.4 &
+%152.3 $\pm$ 84.5 & 89.0 $\pm$ 64.0 \\
+%$ bb ZH $ (ATLAS) & 155  & 207  & 258 & 258 & 62.2 $\pm$ 64.1  & 172.5
+%$\pm$ 94.2 &  103 $\pm$ 52 \\
+%$ top top $  (CMS) &   & & & & & & \\
+%\end{tabular}
+%
+%\caption{Observed signal cross sections for the $\tau\tau$ excesses assuming $gg$ production
+%or $b \bar b$ production. All numbers are given in units of fb.}
+%\label{zhsimple}
+%\end{table}
+
+
+
+\begin{table}
+\centering
+\begin{tabular}{r||c|c|c|c}
+   & $ ggH\tau\tau$ (ATLAS) & $ bbH\tau\tau$ (ATLAS) & $ gg ZH $
+   (ATLAS) & $ bb ZH $ (ATLAS) \\ 
+\hline    
+  \sigmanfive [fb] & 40.0 & 30.6 & 139 & 155 \\ 
+ \sigmanfivepone [fb] & 53.8 & 41.9 & 185 & 207 \\ 
+\sigmanfiveptwo [fb] & 67.9 & 54.9 & 231 & 258 \\ 
+ \sigmaobsnfive [fb] & 82.9 & 77.2 & 228 & 258 \\ 
+    \sigmaobs $\pm$ \deltaobs(full) [fb] & 27.0 $\pm$ 20.5& 30.6 $\pm$ 18.6
+    & 53 $\pm$ 56 & 62 $\pm$ 64 \\  
+ \sigmaobs $\pm$ \deltaobs (1.645) [fb] & 60.2 $\pm$ 24.3 & 58.6 $\pm$ 18.6
+    & 152 $\pm$ 85 & 173 $\pm$ 94 \\ 
+ \sigmaobs $\pm$ \deltaobs (diff) [fb] & 42.9 $\pm$ 13.8 & 46.6 $\pm$ 11.3
+    & 89 $\pm$ 64 & 103 $\pm$ 52 \\ 
+ \sigmaobs $\pm$ \deltaobs (georg) [fb] & 30.3 $\pm$ 22.2  &  34.3
+    $\pm$ 19.3  & 60.6 $\pm$  65.6 & 70.6 $\pm$ 74.2 \\ 
+\end{tabular}
+
+\caption{Observed signal cross sections} 
+\label{obsignal}
+\end{table}
+
+\end{appendices}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand\jnl[1]{\textit{\frenchspacing #1}}
+\newcommand\vol[1]{\textbf{#1}}
+
+\begin{thebibliography}{100}
+
+%\input{ref}
+
+\bibitem{CidVidal:2018eel}
+X.~Cid Vidal \textit{et al.}, 
+CERN Yellow Rep. Monogr. \textbf{7} (2019), 585-865
+[arXiv:1812.07831 [hep-ph]].
+
+
+
+\end{thebibliography}
+
+
+
+%%%%% CLEAR DOUBLE PAGE!
+\newpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
